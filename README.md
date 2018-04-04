@@ -1,12 +1,12 @@
 # genice-diffr
 
-A [GenIce](https://github.com/vitroid/GenIce). plugin for visualizing the structure factor in 3D.
+A [GenIce](https://github.com/vitroid/GenIce) plugin for visualizing the structure factor in 3D.
 
 ## Installation
 
 ### System-wide installation
 
-(Not working)
+(Not working.)
 
     % pip install genice-diffr
 	
@@ -16,7 +16,8 @@ or
 
 ### Private installation
 
-Copy the files in genice/formats into your local formats folder of GenIce.
+    % make install-private
+or copy the files in genice/formats into your local formats folder of GenIce.
 
 ## Requirement
 

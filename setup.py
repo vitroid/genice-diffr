@@ -15,11 +15,12 @@ setup(name='genice-diffr',
       author='Masakazu Matsumoto',
       author_email='vitroid@gmail.com',
       url='https://github.com/vitroid/genice-diffr/',
-      keywords=['genice',],
+      keywords=['genice','plugin'],
       license='MIT',
       packages=[
                 'genice.formats',
                 ],
-      install_requires=['genice>=0.16', 'countrings>=0.1.4'],
+      install_requires=['genice>=0.16',],
+      zip_safe=False,
       )
 

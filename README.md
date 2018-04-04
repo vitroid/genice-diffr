@@ -4,13 +4,19 @@ A [GenIce](https://github.com/vitroid/GenIce). plugin for visualizing the struct
 
 ## Installation
 
+### System-wide installation
+
+(Not working)
+
     % pip install genice-diffr
 	
 or
 
     % make install
 
-or just copy the files in genice/formats into your local formats folder.
+### Private installation
+
+Copy the files in genice/formats into your local formats folder of GenIce.
 
 ## Requirement
 

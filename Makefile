@@ -4,16 +4,17 @@ test: iceR.diffr.yap
 	cd genice; genice $* -r 3 3 3 -f _Diffr[25.0,50.0] > ../$@
 register:
 	./setup.py register -r genice-diffr
-pypi:
+check:
 	./setup.py check
-	./setup.py sdist bdist_wheel upload
-install:
-	make README.rst
-	./setup.py install
 build.:
 	-rm *.so
 	-rm -rf build
-	python setup.py build_ext --inplace
+	./setup.py build_ext --inplace
+install:
+	./setup.py install
+pypi:
+	./setup.py check
+	./setup.py sdist bdist_wheel upload
 clean:
 	-rm $(ALL) *.so *~ */*~ */*/*~ *.o *.gro *.rdf
 	-rm -rf build dist

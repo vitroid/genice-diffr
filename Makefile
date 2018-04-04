@@ -18,7 +18,7 @@ pypi:
 clean:
 	-rm $(ALL) *.so *~ */*~ */*/*~ *.o *.gro *.rdf
 	-rm -rf build dist
-	-rm -rf PairList.egg-info
+	-rm -rf genice_diffr.egg-info
 	-rm -rf */*/__pycache__
 
 

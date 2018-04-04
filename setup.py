@@ -2,7 +2,7 @@
 
 from setuptools import setup
 
-setup(name='GenIce',
+setup(name='genice-diffr',
       version='0.1',
       description='Diffraction plugin for GenIce.',
       #long_description=README + '\n\n' +  CHANGES,

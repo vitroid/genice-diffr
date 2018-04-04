@@ -40,15 +40,11 @@ class Contour():
         # values: 3-dim values on the grid
         for ix,iy,iz in it.product(range(sx-1),range(sy-1),range(sz-1)):
             # confirmed the order
-            # The whole grid ranges in -0.5 .. +0.5
-            # Eight corner positions of a cube
+            # always range in -0.5 .. +0.5
             qp = np.array([((ix+dx-sx//2)/(sx-1),
                             (iy+dy-sy//2)/(sy-1),
                             (iz+dz-sz//2)/(sz-1)) for dx in range(2) for dy in range(2) for dz in range(2)])
-            # Eight corner values of a cube
             qv = values[ix:ix+2, iy:iy+2, iz:iz+2].reshape([8])
-            # divide a cube into face-sharing five tetrahedra and
-            # render the contour surfaces individually.
             if (ix+iy+iz)%2 == 0:
                 for i,j,k,l in ((0,1,2,4), (1,4,5,7), (1,2,3,7), (2,4,6,7), (1,2,4,7)):
                     face = self.tetrahedron(qp[[i,j,k,l]], qv[[i,j,k,l]])
@@ -92,6 +88,10 @@ def main():
     points  = np.array([(x,y,z) for z in range(-2,3) for y in range(-2,3) for x in range(-2,3)])
     values = np.array([np.dot(x,x)-1.7 for x in points]).reshape((5,5,5))
     cnt = Contour(values)
+    #print(values)
+    #cnt.double()
+    #cnt.double()
+    #cnt.double()
     s = yp.Layer(1)
     for face in cnt.facets():
         s += yp.Polygon(face)

@@ -6,17 +6,11 @@ A [GenIce](https://github.com/vitroid/GenIce) plugin for visualizing the structu
 
 ### System-wide installation
 
-(Not working.)
-
-    % pip install genice-diffr
-	
-or
-
-    % make install
+Not supported.
 
 ### Private installation
 
-    % make install-private
+    % make install
 or copy the files in genice/formats into your local formats folder of GenIce.
 
 ## Requirement
@@ -25,7 +19,7 @@ or copy the files in genice/formats into your local formats folder of GenIce.
 
 ## Usage
 
-	% genice 1c -r 3 3 3 -f _DIffr[25.0,50.0] > 1c.diffr.yap
+	% genice 1c -r 3 3 3 -f _Diffr[25.0,50.0] > 1c.diffr.yap
 	% yaplot 1c.diffr.yap
 
 [25.0,50.0] are the threshold values for rendering the contour.  Default value is 5.0.

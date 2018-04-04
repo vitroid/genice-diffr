@@ -2,6 +2,10 @@
 
 A [GenIce](https://github.com/vitroid/GenIce) plugin for visualizing the structure factor in 3D.
 
+## Requirements
+
+* [GenIce](https://github.com/vitroid/GenIce) >=0.16 must be installed.
+
 ## Installation
 
 ### System-wide installation
@@ -12,10 +16,6 @@ Not supported.
 
     % make install
 or copy the files in genice/formats into your local formats folder of GenIce.
-
-## Requirement
-
-* [GenIce](https://github.com/vitroid/GenIce).
 
 ## Usage
 

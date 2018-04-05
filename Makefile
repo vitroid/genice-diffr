@@ -9,6 +9,8 @@ endif
 test: iceR.diffr.yap
 %.diffr.yap: formats/_Diffr.py formats/contour.py Makefile
 	genice $* -r 3 3 3 -f _Diffr[25.0,50.0] > $@
+prepare: # might require root privilege.
+	pip install genice yaplotlib
 install:
 	install -d $(DEST)
 	install -d $(DEST)/formats

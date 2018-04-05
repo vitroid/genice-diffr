@@ -4,6 +4,9 @@ A [GenIce](https://github.com/vitroid/GenIce) plugin for visualizing the structu
 
 ## Requirements
 
+    % make prepare
+will install required packages via pip.
+
 * [GenIce](https://github.com/vitroid/GenIce) >=0.16.
 * [yaplotlib](https://github.com/vitroid/yaplotlib) >=0.1.
 
@@ -16,7 +19,7 @@ Not supported.
 ### Private installation
 
     % make install
-or copy the files in genice/formats into your local formats folder of GenIce.
+or copy the files in formats/ into your local formats folder of GenIce.
 
 ## Usage
 

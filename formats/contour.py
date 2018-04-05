@@ -2,7 +2,7 @@
 
 import numpy as np
 import itertools as it
-from genice import yaplotlib as yp
+import yaplotlib as yp
 import random
 
 #no threshold; draw contour at zero.

@@ -4,7 +4,8 @@ A [GenIce](https://github.com/vitroid/GenIce) plugin for visualizing the structu
 
 ## Requirements
 
-* [GenIce](https://github.com/vitroid/GenIce) >=0.16 must be installed.
+* [GenIce](https://github.com/vitroid/GenIce) >=0.16.
+* [yaplotlib](https://github.com/vitroid/yaplotlib) >=0.1.
 
 ## Installation
 

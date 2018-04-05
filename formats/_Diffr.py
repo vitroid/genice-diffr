@@ -15,7 +15,7 @@ import numpy as np
 #from countrings import countrings_nx as cr
 
 # private library
-from genice import yaplotlib as yp
+import yaplotlib as yp
 #import pairlist as pl
 from formats import contour
 

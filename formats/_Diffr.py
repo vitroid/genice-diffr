@@ -24,11 +24,11 @@ def hook1(lattice):
     lattice.logger.info("Hook1: Diffraction.")
     lattice.logger.info("  3D FFT.")
     cellmat = lattice.repcell.mat
-    atoms = lattice.reppositions
+    atoms = lattice.reppositions - np.floor(lattice.reppositions)
     grid = [32,32,32]
     distrib = np.zeros(grid)
     grid = np.array(grid)
-    iatoms = np.array(np.floor(lattice.reppositions * grid), dtype=int)
+    iatoms = np.array(np.floor(atoms * grid), dtype=int)
     for x,y,z in iatoms:
         distrib[x,y,z] += 1
     diffr = np.fft.fftn(distrib, axes=(0,1,2))

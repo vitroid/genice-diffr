@@ -17,7 +17,7 @@ import numpy as np
 # private library
 import yaplotlib as yp
 #import pairlist as pl
-from formats import contour
+import contour3d
 
 
 def hook1(lattice):
@@ -34,14 +34,15 @@ def hook1(lattice):
     diffr = np.fft.fftn(distrib, axes=(0,1,2))
     power = np.real(diffr*np.conj(diffr)) / len(atoms)
     lattice.logger.info("  Rendering in Yaplot format.")
+    cnt = contour3d.Contour(power, pbc=True, center=True)
+    cnt.double()
     s = ""
     for layer,threshold in enumerate(thresholds):
         s += yp.Color(layer+3)
         s += yp.Layer(layer+1)
-        cnt = contour.Contour(power - threshold, pbc=True, center=True)
-        cnt.double()
         nfacet = 0
-        for face in cnt.facets():
+        #for face in cnt.facets(threshold):
+        for face in cnt.contour_flakes(threshold):
             s += yp.Polygon(face)
             nfacet += 1
         lattice.logger.info("    {0} facets rendered for threshold {1}.".format(nfacet, threshold))

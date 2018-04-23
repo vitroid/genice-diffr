@@ -4,22 +4,19 @@ A [GenIce](https://github.com/vitroid/GenIce) plugin for visualizing the structu
 
 ## Requirements
 
-    % make prepare
-will install required packages via pip.
-
-* [GenIce](https://github.com/vitroid/GenIce) >=0.16.
+* [GenIce](https://github.com/vitroid/GenIce) >=0.23.
 * [yaplotlib](https://github.com/vitroid/yaplotlib) >=0.1.
+* [contour3d](https://github.com/vitroid/contour3d) >=0.1.
 
 ## Installation
 
 ### System-wide installation
 
-Not supported.
+    % make install
 
 ### Private installation
 
-    % make install
-or copy the files in formats/ into your local formats folder of GenIce.
+Copy the files in genice_diffr/formats/ into your local formats folder of GenIce.
 
 ## Usage
 

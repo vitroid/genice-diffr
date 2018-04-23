@@ -7,16 +7,11 @@ else
 endif
 
 test: iceR.diffr.yap
-%.diffr.yap: formats/_Diffr.py formats/contour.py Makefile
+%.diffr.yap: genice_diffr/formats/_Diffr.py Makefile
 	genice $* -r 3 3 3 -f _Diffr[25.0,50.0] > $@
-prepare: # might require root privilege.
-	pip install genice yaplotlib
 install:
-	install -d $(DEST)
-	install -d $(DEST)/formats
-	install formats/*py $(DEST)/formats
+	./setup.py install
 clean:
-	-rm $(ALL) *.so *~ */*~ */*/*~ *.o *.gro *.rdf
-	-rm -rf build dist
-	-rm -rf genice_diffr.egg-info
-	-rm -rf */*/__pycache__
+	-rm $(ALL) *~ */*~ *.yap
+	-rm -rf build dist *.egg-info
+	-find . -name __pycache__ | xargs rm -rf

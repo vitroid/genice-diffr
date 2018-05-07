@@ -37,7 +37,7 @@ def hook1(lattice):
     cnt = contour3d.Contour(power, pbc=True, center=True)
     cnt.double()
     s = ""
-    for layer,threshold in enumerate(thresholds):
+    for layer,threshold in enumerate(lattice.thresholds):
         s += yp.Color(layer+3)
         s += yp.Layer(layer+1)
         nfacet = 0
@@ -51,11 +51,14 @@ def hook1(lattice):
     lattice.logger.info("Hook1: end.")
 
 
-thresholds = (5.0,)
+# argparser
+def hook0(lattice, arg):
+    lattice.logger.info("Hook0: ArgParser.")
+    if arg == "":
+        lattice.thresholds = [5.0,]
+    else:
+        args = arg.split(":")
+        lattice.thresholds = [float(v) for v in args[0].split(",")]
+    lattice.logger.info("Hook0: end.")
 
-def argparser(arg):
-    global thresholds
-    args = arg.split(":")
-    thresholds = [float(v) for v in args[0].split(",")]
-
-hooks = {1:hook1}
+hooks = {0:hook0, 1:hook1}

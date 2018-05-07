@@ -39,8 +39,11 @@ setup(
         'genice_format_hook1': [
             '_Diffr      = genice_diffr.formats._Diffr:hook1',
         ],
+        'genice_format_hook0': [
+            '_Diffr      = genice_diffr.formats._Diffr:hook0',
+        ],
     },
-    install_requires=['yaplotlib', 'contour3d', 'genice>=0.23'],
+    install_requires=['yaplotlib', 'contour3d', 'GenIce>=0.23'],
 
     license='MIT',
 )

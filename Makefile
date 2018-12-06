@@ -5,10 +5,14 @@ ifeq ($(OS), Darwin)
 else
 	DEST=~/.genice
 endif
+GENICE=genice
 
-test: iceR.diffr.yap
+test: iceR.diffr.yap.test
+%.test:
+	make $*
+	diff $* ref/$*
 %.diffr.yap: genice_diffr/formats/_Diffr.py Makefile
-	genice $* -r 3 3 3 -f _Diffr[25.0,50.0] > $@
+	$(GENICE) $* -r 3 3 3 -f _Diffr[25.0,50.0] > $@
 check:
 	./setup.py check
 install:
